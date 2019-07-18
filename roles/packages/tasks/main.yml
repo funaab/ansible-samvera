@@ -40,8 +40,8 @@
     - curl
     - htop
     - openssl
-    - libreadline6
-    - libreadline6-dev
+    - libreadline7
+    - libreadline-dev
     - zlib1g
     - zlib1g-dev
     - libssl-dev
