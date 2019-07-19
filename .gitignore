@@ -1,0 +1,3 @@
+playbook.yml.private
+playbook.retry
+imagemagick_sources/*

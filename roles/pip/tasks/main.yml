@@ -8,15 +8,15 @@
   package: name={{ item }} state=present
   become: yes
   with_items:
-    - python-setuptools
+    - python*setuptools
     - python-dev
     - build-essential
 
-- name: install pip
-  become: yes
-  easy_install:
-    name: pip
-    state: latest
+#- name: install pip
+#  become: yes
+#  easy_install:
+#    name: pip
+#    state: latest
 
 - name: install pexpect for interactive commands
   become: yes

@@ -1,0 +1,46 @@
+- hosts: 'localhost'
+  name: ensure python is installed for ansible
+  user: xxx
+  gather_facts: false
+  pre_tasks:
+      - name: update apt-get
+        raw: sudo apt-get update
+      - name: install python for ansible
+        raw: sudo apt-get -y install python-simplejson
+
+- hosts: 'localhost'
+  name: configure server
+  user: xxx
+  gather_facts: true
+  vars:
+    domain: ''
+    hostname: ir
+    project_name: 'nurax'
+    fedora_database: jdbc-postgresql
+    fcdb_user: 'hyrax'
+    fcdb_pass: 'xxx'
+    db_user: 'hyrax'
+    db_pass: 'xxx'
+    postgres_pass: 'xxx'
+    system_user: xxx
+  roles:
+    - { role: packages }
+    - { role: set_timezone, timezone: 'Africa/Bangui' }
+    - { role: set_hostname, hostname: ir }
+    - { role: sshd_config }
+    - { role: setup_logrotation }
+    - { role: clamav }
+    - { role: ruby, ruby_version: '2.4.2', ruby_sha_256: '93b9e75e00b262bc4def6b26b7ae8717efc252c47154abb7392e54357e6c8c9c' }
+    - { role: postgres }
+    - { role: fedora, fedora_version: '4.7.5' }
+    - { role: solr, solr_version: '7.7.0' }
+    - { role: pip }
+    - { role: fits, fits_version: '1.4.1' }
+    - { role: apache, passenger_ver: '5.1.11'}
+    - { role: apache_with_mod_ssl }
+    - { role: capistrano_setup }
+    - { role: sidekiq }
+    - { role: imagemagick, imagemagick_ver: '7.0.7', gs_ver: '9.27', openjpg_ver: '2.1.0', libtiff_ver: '4.0.5', libpng_ver: '1.6.37' }
+    - { role: ffmpeg, ffmpeg_version: '4.1.3' }
+    - { role: first_deploy, project_name: 'nurax' }
+    # - { role: restart }

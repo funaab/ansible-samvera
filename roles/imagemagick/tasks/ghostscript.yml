@@ -5,7 +5,7 @@
 
 - name: download ghostscript source
   get_url:
-    url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs919/ghostscript-{{ gs_ver }}.tar.gz
+    url:  https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs927/ghostscript-{{ gs_ver }}.tar.gz
     dest: "imagemagick_sources/ghostscript-{{ gs_ver }}.tar.gz"
     force: no
 

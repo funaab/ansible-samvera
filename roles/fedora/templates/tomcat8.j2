@@ -1,5 +1,6 @@
 # Ansible created this file and made a timestamped backup of the original
 # This template will construct settings that look something like
+# TOMCAT7_USER=tomcat8
 # TOMCAT8_USER=tomcat8
 # or
 # TOMCAT_GROUP=tomcat
@@ -15,7 +16,6 @@ JAVA_OPTS="${JAVA_OPTS} -Dfcrepo.postgresql.host=localhost"
 JAVA_OPTS="${JAVA_OPTS} -Dfcrepo.postgresql.port=5432"
 JAVA_OPTS="${JAVA_OPTS} -Djava.awt.headless=true"
 JAVA_OPTS="${JAVA_OPTS} -XX:+UseG1GC"
-JAVA_OPTS="${JAVA_OPTS} -XX:+UseCompressedOops"
 JAVA_OPTS="${JAVA_OPTS} -XX:-UseLargePagesIndividualAllocation"
 JAVA_OPTS="${JAVA_OPTS} -XX:MaxPermSize={{ tomcat_permgen_memory }}"
 JAVA_OPTS="${JAVA_OPTS} -Xms{{ tomcat_min_memory }}"

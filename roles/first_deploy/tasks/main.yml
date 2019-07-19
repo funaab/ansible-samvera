@@ -26,7 +26,7 @@
 
 - name: default repo name
   set_fact:
-    default_repo_name: "https://github.com/curationexperts/{{ project_name }}.git"
+    default_repo_name: "https://github.com/osulp/{{ project_name }}.git"
 
 - name: remove any previously checked out git branch
   become: yes
